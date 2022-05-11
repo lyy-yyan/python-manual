@@ -1,8 +1,9 @@
-# list 列表类似其他语言中的数组
+# list 列表（类似其他语言中的数组）
+
 nameList = ["lyy", "lly", "gx", "xqj"]      # 创建列表
-print(type(nameList))   # 查看类型
+print(type(nameList))                       # 查看类型
 print(nameList)
-print(nameList[0])      # 取出某个值
+print(nameList[0])                          # 取出某个值
 
 # 遍历列表
 for name in nameList:
@@ -23,18 +24,18 @@ print(nameList[0])
 
 # 查询元素
 print(nameList.index("dt"))
-# print(nameList.index("xxx"))      # 查询不存在的值会报错
+# print(nameList.index("xxx"))              # 查询不存在的值会报错
 
 # 删除元素
-del nameList[5]         # 通过序号删除
+del nameList[5]                             # 通过序号删除
 print(nameList)
-nameList.remove("cr")   # 通过内容删除
+nameList.remove("cr")                       # 通过内容删除
 print(nameList)
 
 # 列表切片
 print(nameList[:2])
-print(nameList[-3:-1])  # 可以用负序号取元素
-print(nameList[0::2])   # 按固定步长取元素[头:尾:步长]
+print(nameList[-3:-1])                      # 可以用负序号取元素
+print(nameList[0::2])                       # 按固定步长取元素[头:尾:步长]
 
 # 嵌套
 nameList.append(["lyy", "lly"])
