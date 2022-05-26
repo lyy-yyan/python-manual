@@ -44,7 +44,7 @@ print("a\tb")                   # 'a       b'
 s1 = "my love"
 s2 = "jack"
 f"{s1} is {s2}"                 # 'my love is jack'
-"my name is {name}, my age is {age}".format(name=s, age=13)     # 'my name is jack, my age is 13'
+"my name is {name}, my age is {age}".format(name='jack', age=13)     # 'my name is jack, my age is 13'
 "my name is {0}, my age is {1}".format("lyy", 13)               # 'my name is lyy, my age is 13'
     
 # 2. 判断方法
