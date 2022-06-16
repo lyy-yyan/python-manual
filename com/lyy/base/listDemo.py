@@ -1,5 +1,8 @@
 # list 列表（类似其他语言中的数组）
 
+from tarfile import XHDTYPE
+
+
 nameList = ["lyy", "lly", "gx", "xqj"]      # 创建列表
 print(type(nameList))                       # 查看类型
 print(nameList)
@@ -81,3 +84,29 @@ print(nums)                         # [20, 10, 9, 5, 1]
 
 nameList.extend(nums)
 print(nameList)                     # ['lyyyyy', 'lly', 'gx', 'xqj', ['lyy', 'lly'], 20, 10, 9, 5, 1]
+
+# 浅copy
+names = nameList.copy()
+print(names)                        # ['lyyyyy', 'lly', 'gx', 'xqj', ['lyy', 'lly'], 20, 10, 9, 5, 1]
+
+# 引用的是同一个地址
+print(id(names[4]) == id(nameList[4]))  # True
+
+names[0] = "lyy"
+print(names)                        # ['lyy', 'lly', 'gx', 'xqj', ['lyy', 'lly'], 20, 10, 9, 5, 1]
+print(nameList)                     # ['lyyyyy', 'lly', 'gx', 'xqj', ['lyy', 'lly'], 20, 10, 9, 5, 1]
+
+names[4][1] = "xh"
+print(names)                        # ['lyy', 'lly', 'gx', 'xqj', ['lyy', 'xh'], 20, 10, 9, 5, 1]
+print(nameList)                     # ['lyyyyy', 'lly', 'gx', 'xqj', ['lyy', 'xh'], 20, 10, 9, 5, 1]
+
+# 对于内部引用，copy的只是地址，其中一个修改，另一个也会被修改
+
+# 深copy
+import copy
+names = copy.deepcopy(nameList)
+print(id(names[4]) == id(nameList[4]))  # False
+
+# 列表生成式
+list = [f"staff-{i}" for i in range(1, 10)]
+print(list)     # ['staff-1', 'staff-2', 'staff-3', 'staff-4', 'staff-5', 'staff-6', 'staff-7', 'staff-8', 'staff-9']
